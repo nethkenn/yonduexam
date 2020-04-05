@@ -3,7 +3,7 @@ import {beforeEnterLogin, beforeEnterAdmin} from "./route_guards";
 const routes = [
   {
     path        : '/',
-    component   : () => import('layouts/Layout.vue'),
+    component   : () => import('layouts/LoginLayout.vue'),
     beforeEnter : beforeEnterLogin,
     children    : [
       { path    : '', component: () => import('pages/Login.vue'), name : 'login' }
@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path        : '/admin',
-    component   : () => import('layouts/Layout.vue'),
+    component   : () => import('layouts/AdminLayout.vue'),
     beforeEnter : beforeEnterAdmin,
     children    : [
       { path    : '', component: () => import('pages/Admin/Admin.vue'), name : 'admin'}
