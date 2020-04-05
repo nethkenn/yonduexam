@@ -153,7 +153,7 @@
       })
     },
     async deleteSelected(){
-      const ids = this.selected.map(v => { return v.id });
+      const ids = this.selected.map(v => { return v.id }).filter(v => v !== this.user.id);
       if(ids.length){
         this.loading = true;
         await Users.deleteAll(ids).then(response => {
